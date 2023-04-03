@@ -1,4 +1,4 @@
-# Pelatihan Full-Stack Web Development
+# Pemrograman Mobile 1
 
 #### Teknik Informatika Universitas Muhamadiyah Sukabumi
 
