@@ -1,122 +1,96 @@
 # Sebelum Memulai
 
-Sebelum mengikuti palatihan ini diharapkan kalian sudah menguasai kemampuan dasar dalam pemrograman khususnya `JavaScript` karena kita akan menggunakan bahasa pemrograman tersebut selama pelatihan. Selain JavaScript, diharapkan kalian juga telah menguasai atau setidaknya mengetahui dasar-dasar penggunaan `library` atau `tools-tools` berikut.
+Sebelum mengikuti palatihan ini diharapkan kalian sudah menguasai kemampuan dasar dalam pemrograman khususnya `Kotlin` karena kita akan menggunakan bahasa pemrograman tersebut selama pelatihan. Selain Kotlin, diharapkan kalian juga telah menguasai atau setidaknya mengetahui dasar-dasar penggunaan `tools-tools` berikut.
 
 > Namun tenang, jika kalian belum menguasainya kita akan **belajar bersama-sama** untuk memmahami penggunaan tools tersebut.
 
-# JavaScript
+# Kotlin
 
-![JavaScript](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/javascript.svg)
+![Kotlin](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/kotlin.svg)
 
-JavaScript adalah bahasa pemrograman tingkat tinggi yang pada awalnya dikembangkan untuk membuat sebuah website. Bahasa ini mampu memberikan *logic* ke dalam website, sehingga website tersebut memiliki fungsionalitas tambahan dan lebih interaktif.
+Kotlin adalah bahasa pemrograman modern, disajikan secara statis yang berjalan pada platform **Java Virtual Machine (JVM)**. Bahasa pemrograman yang satu ini banyak diminati oleh para developer. Terutama bagi kamu yang ingin jadi developer Android, pakailah bahasa yang satu ini.
 
-JavaScript termasuk ke dalam kategori scripting language. Apa maksudnya? Salah satu ciri-ciri utama dari bahasa scripting adalah kode tidak perlu dikompilasi agar bisa dijalankan. Scripting language menggunakan interpreter untuk menerjemahkan kode atau perintah yang kita tulis supaya dimengerti oleh mesin.
+Kotlin mulai banyak dipakai di perusahaan besar. Contohnya Gojek, Slack, Trello dan Pinterest. Apa kamu tertarik bisa bekerja di perusahaan seperti yang disebutkan tadi? Kalau tertarik mulai cari tahu benefit dari mempelajari Kotlin.
 
-```js
-console.log('Hello World!');
+Selain Kotlin itu modern, Kotlin merupakan bahasa yang powerfull tentu cocok bagi developer dalam membuat aplikasi Android. Karena Kotlin adalah bahasa nomor satu untuk pengembangan aplikasi Android. Itulah alasan utama kenapa kamu harus mempelajarinya.
+
+```kotlin
+fun main() {
+    println("Hello World!")
+}
 ```
 
-### Kenapa kita harus belajar JavaScript?
+### Kenapa kita harus belajar Kotlin?
 
-* JavaScript dibuat dengan tujuan awal agar website menjadi lebih interaktif.
-* JavaScript termasuk ke dalam kategori scripting language, sehingga kode tidak perlu dikompilasi untuk bisa dijalankan.
-* Terdapat interpreter untuk menerjemahkan kode kita agar bisa dimengerti oleh mesin.
-* Terdapat dua lingkungan umum untuk menjalankan JavaScript, yaitu browser dan Node.js
-* JavaScript dikembangkan dengan standar ECMAScript. Update besar terakhir tersaji dalam versi ES6 pada tahun 2015. Sejak saat itu, tiap tahun JavaScript melakukan update bersifat minor.
+* Compatibility
+  Kotlin sepenuhnya kompatibel dengan JDK 6. Ini memastikan bahwa aplikasi yang dibangun dengan Kotlin dapat berjalan pada perangkat Android yang lebih lama tanpa ada masalah. Android Studio pun mendukung penuh pengembangan dengan bahasa Kotlin.
 
-Karena pelatihan ini sepenuhnya akan menggunakan bahasa pemrograman `JavaScript` maka dibutuhkan kemampuan dasar untuk mengembangkan aplikasi menggunakan JavaScript seperti mendeklarasikan `variable`, mengetahui penggunaan `tipe data` membuat `function`, `pemrograman berorientasi object` dan sebagainya.
+* Performance
+  Dengan struktur bytecode yang sama dengan Java, aplikasi yang dibangun dengan Kotlin dapat berjalan setara dengan aplikasi yang dibangun dengan Java. Terdapat juga fitur seperti inline function pada Kotlin yang membuat kode yang dituliskan dengan lambda bisa berjalan lebih cepat dibandingkan kode yang sama dan dituliskan dengan Java.
 
-### Sintaks Dasar
+* Interoperability
+  Anda dapat menggunakan bahasa Kotlin bersamaan dengan bahasa Java, tanpa harus memigrasikan semua kode lama Anda ke Java. Sehingga Anda dapat memanggil kode Java dari Kotlin dan sebaliknya. Inilah alasan yang menyebabkan Kotlin menjadi cepat diterima oleh developer.
 
-```js
-/**
- * Mendeklarasikan variable menggunakan sintaks 'const'
- * artinya variable tersebut hanya bisa diisi dengan nilai yang pertama
- * dan tidak bisa diinisialisasi ulang
- **/
-const name = 'Reski Mulud Muchamad'; // pendeklarasian dan inisialisasi nilai variable bertipe data String
-const age = 21; // variable bertipe data Number
-const isLoveManCity = true; // variable bertipe data Boolean
-
-function sayHello() { // pendeklarasian function
-  let isLove; // pendeklarasian 'mutable' variable (bisa diinisialisasi ulang)
-
-  if (isLoveManCity) { // pengkondisian
-    isLove = 'saya menyukai club Manchester City';
-  } else {
-    isLove = 'saya tidak menyikai club Mancheste City';
-  }
-
-  // pengembalian nilai sebuah 'function' jika dipanggil
-  return `Hallo, saya ${name}! usia saya ${age} tahun, dan ${isLove}`;
-}
-
-// memanggil function sayHello() dan mencetaknya di console
-console.log(sayHello());
-// output : Hallo, saya Reski Mulud Muchamad! usia saya 21 tahun, dan saya menyukai club Manchester City
-```
-
-Contoh sintaks JavaScript **berorientasi objek (OOP)**
-
-```js
-// mendefinisikan class (cetakan)
-class Animals {
-  constructor(className, name, legs, isMamal) {
-    this.className = className;
-    this.name = name;
-    this.legs = legs;
-    this.isMamal = isMamal;
-  }
-}
-
-// membuat class Cat yang inherit (menjadi turunan) ke class Animals
-class Cat extends Animals {
-  constructor(name, legs) {
-    super('Kucing', name, legs, true);
-  }
-
-  run() {
-    return `${this.className} ${this.name} berlari menggunakan ke-${this.legs} kakinya`;
-  }
-}
-
-const jimeng = new Cat('Jimeng', 4);
-console.log(jimeng.run());
-// output : "Kucing Jimeng berlari menggunakan ke-4 kakinya"
-```
+* Compilation Time
+  Kotlin mendukung kompilasi inkremental yang efisien. Oleh karena itu, proses build biasanya sama atau lebih cepat dibandingkan dengan Java.
 
 ### Materi Pendukung
 
-* [JavaScript MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [An Introduction to JavaScript](https://javascript.info/intro)
-* Playlist Belajar JavaScript (Web Programming UNPAS)
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLFIM0718LjIWXagluzROrA-iBY9eeUt4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL-CtdCApEFH_hja5vRJgQOXylCiQud7Qa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL-CtdCApEFH8lHOsi7kIDxK57WWLmzVog" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+* [Kotlin-Pengenalan](https://medium.com/@filzahafidzahf5/kotlin-3490155e3633)
+* [Dokumentasi Resmi](https://kotlinlang.org/docs/home.html)
 
 ---
 
-# Node.JS
+# Android
 
-![Node.JS](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/nodejs.svg)
+![Android](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/android.svg)
 
-Node.js adalah **JavaScript Runtime** yang dapat mengeksekusi kode JavaScript di luar browser. Node.js seolah-olah menjadi gerbang bagi para JavaScript Developer untuk mengembangkan sistem di luar dari browser. JavaScript menjadi bahasa multiplatform yang banyak menggiring developer untuk menggunakannya. Popularitas JavaScript pun meroket! Pada tahun 2014 hingga 2020 JavaScript menjadi bahasa pemrograman nomor satu yang banyak digunakan oleh developer. Saat ini, JavaScript menjadi salah satu pilihan tepat dalam membangun web server, terlebih bila Anda adalah seorang Front-End Web Developer. Anda tentu tidak perlu menggunakan bahasa yang berbeda dalam membangun Back-End. Anda bisa menjadi Full-Stack Developer dengan mempelajari satu bahasa pemrograman saja dengan menggunakan Node.JS.
+Android adalah sistem operasi yang dikeluarkan oleh Google. Android dibuat khusus untuk smartphone dan tablet. Berbagai macam produsen telah menggunakan Android sebagai sistem operasi untuk peranti (device) yang mereka produksi. Android juga mempunyai store dengan lebih dari 2.5 miliar pengguna aktif per bulannya, per Mei 2019.
 
-Untuk membuat sebuah proyek Node.JS, silahkan buka terminal dan jalankan kode berikut. Maka sebuah file bernama `package.json` secara otomatis akan dibuat.
+Pada tahun 2013, Android menjadi operation system (OS) terlaris pada tablet dan smartphone. Kini market share Android sedikitnya 70 % dari total penjualan smartphone di tingkat global (statista.com). Tercatat pada tahun 2016 Android store memiliki lebih dari 2.8 juta aplikasi.
 
-```bash
-npm init
-```
+Android menarik bagi perusahaan teknologi yang membutuhkan barang siap jadi, biaya rendah dan kustomisasi OS untuk perangkat teknologi tinggi mereka. Hal ini menjadi daya tarik bagi banyak perusahaan, sehingga mereka memilih Android.
 
-NPM alias Node Package Manager merupakan JavaScript Package Manager bawaan dari Node.js. Melalui NPM ini kita dapat membuat Node.js package (proyek) dan mengelola penggunaan package eksternal yang digunakan. Leih detail nya akan kita bahas nanti
-
-> Jika belum menginstall node sebelumnya, tutorial penginstallan node akan dijelaskan di modul berikutnya
+Source code dari Android bersifat open source. Ini adalah hal menarik bagi komunitas developer, karena lisensi open source sangat mendukung untuk mengembangkan produknya dengan aman.
 
 ### Materi Pendukung
 
-* [Documentation | Node.JS](https://nodejs.org/en/docs/)
-* [Introduction to Node.JS](https://nodejs.dev/learn/introduction-to-nodejs)
-* [Differences between Node.js and the Browser](https://nodejs.dev/learn/differences-between-nodejs-and-the-browser)
-* Playlist Belajar Node.JS (Web Programming UNPAS)
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLFIM0718LjIW-XBdVOerYgKegBtD6rSfD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLQkwcJG4YTCTq1raTb5iMuxnEB06J1VHX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLSrm9z4zp4mG9o873gDqCuGZkgOb_TR4N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+* [Documentation - Android Developers](https://developer.android.com/docs)
+* [Belajar Android](https://budioktaviyans.medium.com/belajar-android-part-1-1ab4d44e10e6)
+
+---
+
+# Android Studio
+
+![Android Studio](https://upload.wikimedia.org/wikipedia/commons/9/92/Android_Studio_Trademark.svg)
+
+Android Studio adalah Lingkungan Pengembangan Terpadu – Integrated Development Environment (IDE) untuk pengembangan aplikasi Android, berdasarkan IntelliJ IDEA . Selain merupakan editor code IntelliJ dan alat pengembang yang berdaya guna, Android Studio menawarkan lebih banyak fitur. Gunanya untuk meningkatkan produktivitas kamu saat membuat aplikasi Android, misalnya:
+
+* Sistem versi berbasis Gradle yang fleksibel
+* Emulator yang cepat dan kaya fitur
+* Lingkungan yang menyatu untuk pengembangan bagi semua perangkat Android
+* Instant Run untuk mendorong perubahan ke aplikasi yang berjalan tanpa membuat APK baru
+* Template kode dan integrasi GitHub untuk membuat fitur aplikasi yang sama dan mengimpor kode contoh
+* Alat pengujian dan kerangka kerja yang ekstensif
+* Alat Lint untuk meningkatkan kinerja, kegunaan, kompatibilitas versi, dan masalah-masalah lain
+* Dukungan C++ dan NDK
+
+![Tampilan Android Studio](https://upload.wikimedia.org/wikipedia/commons/e/e7/Android_studio_3_1_screenshot.png)
+> Sumber gambar : Wikimedia Commons
+
+### Materi Pendukung
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLSrm9z4zp4mG9o873gDqCuGZkgOb_TR4N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+* [Laman Download/Installasi](https://developer.android.com/studio/install)
 
 ---
 
@@ -183,53 +157,6 @@ Perintah git lainnya akan kita pelajari **pada saat materi berlangsung** sesuai 
 
 ---
 
-# MySql
-
-![MySQL](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/mysql.svg)
-
-MySQL adalah sebuah DBMS (Database Management System) menggunakan perintah SQL (Structured Query Language) yang banyak digunakan saat ini dalam pembuatan aplikasi berbasis website. MySQL dibagi menjadi dua lisensi, pertama adalah Free Software dimana perangkat lunak dapat diakses oleh siapa saja. Dan kedua adalah Shareware dimana perangkat lunak berpemilik memiliki batasan dalam penggunaannya.
-
-MySQL termasuk ke dalam RDBMS (Relational Database Management System). Sehingga, menggunakan tabel, kolom, baris, di dalam struktur database -nya. Jadi, dalam proses pengambilan data menggunakan metode relational database. Dan juga menjadi penghubung antara perangkat lunak dan database server.
-
-Secara garis besar, fungsi dari MySQL adalah untuk membuat dan mengelola database pada sisi server yang memuat berbagai informasi dengan menggunakan bahasa SQL. Fungsi lain yang dimiliki adalah memudahkan pengguna dalam mengakses data berisi informasi dalam bentuk String (teks), yang dapat diakses secara personal maupun publik dalam web.
-
-Pembelajaran di pelatihan ini akan menggunakan MySQL sebagai database nya, pengtahuan dasar akan query/perintah SQL dibutuhkan, diharapkan sebelumnya sudah pernah menggunakan database MySQL seperti di mata kuliah Pemrograman Web I dan II.
-
-### Struktur Query SQL
-
-Berikut contoh query untuk operasi CRUD (Create Read Update Delete)
-
-> Mengambil data
-
-```sql
-SELECT * FROM products LIMIT 10 ORDER BY date_added ASC;
-```
-
-> Memasukan data
-
-```sql
-INSERT INTO category_product (category_id, category_name, product_id)
-VALUES (1, 'Fashion', 3);
-```
-
-> Memperbarui data
-
-```sql
-UPDATE products SET stock = 100 WHERE id = 2;
-```
-
-> Menghapus data
-
-```sql
-DELETE FROM products WHERE id = 3;
-```
-
-### Materi Pendukung
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fxe6qev-bno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
-
 # Postman
 
 ![Postman](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/postman.svg)
@@ -244,65 +171,4 @@ Postman tersedia secara gratis dan dapat berjalan pada sistem operasi Windows, L
 
 ---
 
-# Hapi.JS
-
-![Hapi](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/hapi.svg)
-
-Hapi.js merupakan framework untuk Node.js yang digunakan untuk pengembangan aplikasi yang membutuhkan application programming interface (API). Framework ini diciptakan oleh developer yang berkerja di Wallmart untuk menghadapi traffic yang padat saat Black Friday Online (sebuah hari dimana pelanggan bisa mendapatkan diskon super besar, di Indonesia terdapat event serupa dengan nama Hari Belanja Online Nasional).
-
-Pada pelatihan ini kita akan mengunakan framework/library [Hapi.JS](https://hapi.dev) untuk mengembangkan API di sisi Backend nya, dan penggunaan nya akan dijelaskan di materi nanti. Jika ingin mengenal terlebih dahulu apa itu framework Hapi bisa kunjungi dokumentasi resmi nya.
-
-* [Website Resmi](https://hapi.dev)
-* [Dokumentasi](https://hapi.dev/tutorials/?lang=en_US)
-
-# React.JS
-
-![React](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/react.svg)
-
-React adalah JavaScript library yang digunakan untuk membangun User Interface (antarmuka pengguna). Hal ini ditegaskan oleh tim pengembang React pada website resminya di reactjs.org. Dengan React, kita dapat terhindar dari banyak kesulitan yang biasa terjadi ketika menggunakan standar W3C dalam membangun antarmuka pengguna. Dilansir dari website resminya, React memanfaatkan konsep komponen, deklaratif, dan unidirectional data flow (aliran data searah). Berikut penjelasan singkatnya.
-
-* **Komponen** :
-React memanfaatkan komponen dalam membangun antarmuka. Setiap komponen terenkapsulasi dan dapat saling dikomposisikan satu sama lain. Karena adanya komponen, antarmuka yang dibangun menggunakan React sangat reusable. Anda tidak perlu menuliskan kode yang sama berulang kali untuk menggunakan antarmuka yang serupa.
-
-* **Deklaratif** :
-Dengan konsep deklaratif, pembuatan antarmuka pengguna dapat lebih cepat. Pasalnya, kita cukup fokus terhadap apa yang ingin dicapai. Tak ada kode imperatif lagi ketika menggunakan React. Bahkan, Anda bisa menuliskan “layaknya” sintaksis HTML di dalam kode JavaScript. Hal yang mustahil dilakukan oleh JavaScript standar saat ini. Karena itu, Anda bisa mengucapkan selamat tinggal pada fungsi DOM manipulation, seperti appendChild, getElementById, addEventListener, dan sebagainya.
-
-* **Aliran Data Searah** :
-Komponen React dapat menampung sebuah data. React secara reaktif akan memperbarui dan me-render komponen jika data di dalamnya berubah. Karena sifat reaktifnya tersebut, kami rasa inilah alasan mengapa dinamakan React. Komponen React dapat dikomposisikan dan aliran data pada komponen dilakukan secara searah dari parent ke child. Hal itu membuat perubahan data pada React lebih terukur.
-
-### Membuat project react
-
-Untuk membuat project React, kita bisa memanfaatkan `create-react-app`. Berikut perintahnya :
-
-```bash
-npx create-react-app my-app # my-app adalah nama project nya, bisa diubah sesuai keinginan
-cd my-app
-code . # membuka project di Visual Studio Code
-```
-
-Di pelatihan ini kita akan menggunakan React.JS untuk membuat tampilan antarmuka di sisi Frontend. Ini akan sangat menyenangkan, maka dipersiapkan yah.
-
-* [Website Resmi](https://reactjs.org)
-* [Tutorial : Intro to React](https://reactjs.org/tutorial/tutorial.html)
-
----
-
-# Heroku
-
-![Heroku](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/heroku.svg)
-
-Heroku adalah sebuah cloud platform atau tempat penyimpanan yang menjalakan bahasa pemrograman tertentu. Heroku juga termasuk ke dalam kriteria jenis Platform As A Service atau yang disingkat menjadi PaaS, yang dimana fungsi PaaS ini ialah user yang ingin melakukan penyebaran atau deploy aplikasi proyeknya ke heroku cukup dengan melakukan konfigurasi pada aplikasi proyek yang ingin Kamu deploy tentunya dan juga sudah terdapat platform untuk memungkinkan pengguna menjalankan, mengembangkan, dan bahkan mengelola aplikasi tanpa kompleksitas membangun serta memelihara infrastruktur data yang sudah terkait ke dalam pengembangan dan peluncuran aplikasi proyek.
-
-Kita akan memanfaatkan heroku untuk mendeploy aplikasi kita khususnya untuk sisi Backend. Sebelum kita memulai menggunakan Heroku, alangkah baiknya kita membuat akun Heroku terlebih dahulu. Untuk panduan pembuatan akun heroku akan dijelaskan pada modul berikutnya.
-
----
-
-# Netlify
-
-![Netlify](https://raw.githubusercontent.com/reskimulud/reskimulud/main/logo-svg/netlify.svg)
-
-Sama hal nya seperti Heroku, Netlify adalah sebuah platform yang menjadi sebuah tempat penyimpanan aplikasi atau projek. Namun bedanya Netlify biasanya digunakan untuk mendeploy aplikasi tampilan antar muka seperti React. Maka nanti kita akan menggunakan Netlify sebagai tempat untuk mendeploy aplikasi React kita.
-
-Tutorial atau panduan pembuatan akun Netlify akan dibahas di modul berikutnya.
-
-**[<< Sebelumnya](README.md)** | **[Selanjutnya >>](instalasi.md)**
+**[Selanjutnya >>](instalasi.md)**
