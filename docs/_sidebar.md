@@ -8,6 +8,7 @@
 
   - [Fundamental Kotlin](m1-fundamental-kotlin.md)
   - [Tipe Data dan Variable](m2-datatype-variable.md)
+  - [Function](m3-function-kotlin.md)
 
 - #2 - Kotlin Control Flow
 
