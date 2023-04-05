@@ -11,6 +11,7 @@
   - [Function](m3-function-kotlin.md)
   - [If-Else Expression](m4-if-else.md)
   - [Arrays](m5-arrays.md)
+  - [Tipe Null](m6-null.md)
 
 - #2 - Kotlin Control Flow
 
