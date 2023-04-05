@@ -150,4 +150,4 @@ fun main() {
 }
 ```
 
-**[<< Sebelumnya](m1-fundamental-kotlin.md)**  | **[Selanjutnya >>](m3-function-kotlin.md)**
+**[<< Sebelumnya](m2-datatype-variable.md)**  | **[Selanjutnya >>](m4-if-else.md)**
