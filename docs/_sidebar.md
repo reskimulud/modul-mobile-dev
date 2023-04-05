@@ -19,6 +19,7 @@
   - [When Expression](m8-when.md)
   - [While Loop](m9-while-loop.md)
   - [For Loop](m10-for-loop.md)
+  - [Break dan Continue](m11-break-continue.md)
 
 - #3 - OOP Pada Kotlin
 
