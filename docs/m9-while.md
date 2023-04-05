@@ -110,4 +110,4 @@ fun main() {
 
 Kode di atas akan terus mencetak teks "Hello World" ke dalam konsol sampai program dihentikan secara paksa.
 
-**[<< Sebelumnya](m8-when.md)**  | **[Selanjutnya >>](m10-for.md)**
+**[<< Sebelumnya](m8-when.md)**  | **[Selanjutnya >>](m10-for-loop.md)**
