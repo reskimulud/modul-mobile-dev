@@ -15,6 +15,9 @@
 
 - #2 - Kotlin Control Flow
 
+  - [Apa Itu Control Flow](m7-control-flow.md)
+  - [When Expression](m8-when.md)
+
 - #3 - OOP Pada Kotlin
 
 - #4 - Functional Programming
