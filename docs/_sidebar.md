@@ -18,6 +18,7 @@
   - [Apa Itu Control Flow](m7-control-flow.md)
   - [When Expression](m8-when.md)
   - [While Loop](m9-while-loop.md)
+  - [For Loop](m10-for-loop.md)
 
 - #3 - OOP Pada Kotlin
 
