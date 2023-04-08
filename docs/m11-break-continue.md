@@ -96,4 +96,4 @@ fun main() {
 
 Pada kode diatas, `break` yang sudah ditandai dengan label akan dilompati ke titik awal proses perulangan yang sudah ditandai dengan label. `break` akan menghentikan proses perulangan terluar dari dalam proses perulangan, di mana break tersebut dipanggil.
 
-**[<< Sebelumnya](m10-for-loop.md)**  <!-- | **[Selanjutnya >>]()** -->
+**[<< Sebelumnya](m10-for-loop.md)**  | **[Selanjutnya >>](m12-oop.md)**

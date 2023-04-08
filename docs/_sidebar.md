@@ -23,6 +23,9 @@
 
 - #3 - OOP Pada Kotlin
 
+  - [Konsep Object-Oriented Programming](m12-oop.md)
+  - [Class dan Object](m13-class-object.md)
+
 - #4 - Functional Programming
 
 - #6 - Konsep Dasar Android
