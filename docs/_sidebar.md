@@ -39,6 +39,8 @@
 
 - #8 - RecyclerView
 
+  - [Teori RecyclerView](recyclerview.md)
+
 - #9 - Architecture Component
 
 - #10 - Android Navigation
