@@ -48,3 +48,11 @@ Berikut adalah langkah-langkah mengimplementasikan RecyclerView dari awal sampai
 3. Membuat class baru dan menambahkan pewarisan RecyclerView.Adapter.
 4. Membuat inner class dan menambahkan pewarisan RecyclerView.ViewHolder.
 5. Di method onCreate() dalam Activity, buatlah RecyclerView dengan adapter dan layout manager.
+
+## Materi Pendukung
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HtwDXRWjMcU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/18VcnYN5_LM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<< Sebelumnya  | **[Selanjutnya >>](recyclerview-exercise.md)**

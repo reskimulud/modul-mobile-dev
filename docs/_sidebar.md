@@ -40,6 +40,7 @@
 - #8 - RecyclerView
 
   - [Teori RecyclerView](recyclerview.md)
+  - [Latihan RecyclerView](recyclerview-exercise.md)
 
 - #9 - Architecture Component
 
