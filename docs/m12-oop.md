@@ -8,4 +8,8 @@ OOP masih menjadi salah satu paradigma atau teknik pemrograman yang banyak digun
 
 Gambaran visual di atas memberikan konsep umum tentang OOP, yang meliputi blueprint Kucing, atribut yang dimilikinya, dan kemampuan yang dapat dilakukannya. Dalam paradigma pemrograman Berorientasi Objek (OOP), sebuah class adalah sebuah blueprint yang dapat digunakan untuk membuat objek. Blueprint ini merupakan sebuah template yang menjelaskan perilaku objek tersebut dalam bentuk properti atau fungsi. Dalam dunia pemrograman, terutama dalam paradigma OOP, kita sering membuat banyak objek dengan jenis yang sama. Dengan menggunakan blueprint ini, kita dapat mengurangi duplikasi kode dalam pembuatan objek yang serupa.
 
+* **Class**: Merupakan sebuah blueprint yang terdapat properti dan fungsi di dalamnya
+* **Properties**: Karakteristik dari sebuah kelas, memiliki tipe data.
+* **Functions**: Kemampuan atau aksi dari sebuah kelas.
+
 **[<< Sebelumnya](m12-oop.md)**  | **[Selanjutnya >>](m13-class-object.md)**

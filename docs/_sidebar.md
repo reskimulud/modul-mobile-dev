@@ -25,6 +25,11 @@
 
   - [Konsep Object-Oriented Programming](m12-oop.md)
   - [Class dan Object](m13-class-object.md)
+  - [Properties](m14-properties.md)
+  - [Constructor](m15-constructor.md)
+  - [Pilar-pilar dalam OOP](m16-pilar-oop.md)
+  - [Inheritances](m17-inheritances.md)
+  - [Abstract Class dan Interface](m18-abstract-interface.md)
 
 - #4 - Functional Programming
 
