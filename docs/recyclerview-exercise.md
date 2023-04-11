@@ -4,3 +4,10 @@
 
 [GitHub Project RecyclerView](https://github.com/mankart/recyclerview)
 
+## Library Glide
+
+```build.gradle
+dependencies {
+  implementation 'com.github.bumptech.glide:glide:4.15.1'
+}
+```
