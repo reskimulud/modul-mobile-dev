@@ -135,3 +135,295 @@ Maka tampilan dari _layout_ tersebut akan menjadi seperti berikut:
 ![Layout Item](images/layout-item.png)
 
 ## Membuat layout untuk RecyclerView
+
+Kemudian kita akan membuat _layout_ untuk RecyclerView. Karena RecyclerView akan ditampilkan di dalam _layout_ MainActivity, maka buka file **activity_main.xml** dan ubah _layout_ tersebut menjadi seperti berikut:
+
+```activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_albums"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/layout_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+Perhatikan, selain menambahkan RecyclerView, kita juga perlu mengatur posisi dari Constraint Layout, serta menambahkan id dari RecyclerView yakni `android:id="@+id/rv_albums"`. Selain itu, kita juga perlu menambahkan atribut `tools:listitem="@layout/layout_item"` pada RecyclerView. Atribut tersebut digunakan untuk menampilkan _layout_ item pada preview layout.
+
+Maka tampilan dari _layout_ tersebut akan menjadi seperti berikut:
+
+![Layout Item](images/layout-main.png)
+
+## Membuat model data
+
+Kemudian kita akan membuat sebuah model data yang akan digunakan untuk menampung data yang akan ditampilkan di RecyclerView. Pertama, buat package baru dengan cara klik kanan pada direktori **root package kalian** → **new** → **package** dan beri nama **model**.
+
+![Create Package](images/create-package.png)
+
+> Cukup tuliskan **model** di akhir nama package, jangan hapus tulisan sebelumnya.
+
+Selanjutnya, buat sebuah **data class** baru dengan cara klik kanan pada package **model** → **new** → **Kotlin file/class** dan beri nama **Album**, dan pilih bagian **Data Class**.
+
+![Create Data Class Album](images/create-data-class-album.png)
+
+Dan ikuti kode di bawah ini untuk membuat model data class Album:
+
+> Jangan menghapus kode yang sudah ada seperti `package` yang ada di baris awal, cukup tambahkan kode yang baru saja dituliskan.
+
+```Album.kt
+data class Album(
+    var id: Int = 0,
+    var albumNames: String = "",
+    var albumArtist: String = "",
+    var year: String = "",
+    var release: String = "",
+    var songs: Int = 0,
+    var duration: String = "",
+    var genre: String = "",
+    var description: String = "",
+    var label: String = "",
+    var cover: Int = 0,
+)
+```
+
+## Membuat data dummy
+
+Kemudian kita akan membuat data dummy yang akan digunakan untuk menampilkan data di RecyclerView. Buat package baru dengan cara klik kanan pada direktori **root package kalian** → **new** → **package** dan beri nama **data**.
+
+Setelah itu buat sebuah **object** baru dengan cara klik kanan pada package **data** → **new** → **Kotlin file/class** dan beri nama **AlbumData**, dan pilih bagian **Object**.
+
+Buka file **AlbumData.txt** pada berkas yang telah di unduh sebelumnya, dan salin semua kode yang ada di dalamnya. Kemudian buka file **AlbumData.kt** yang telah dibuat tadi, dan ganti kode yang ada dengan kode yang telah disalin tadi.
+
+## Membuat adapter
+
+Kemudian kita akan membuat adapter untuk RecyclerView. Buat package baru dengan cara klik kanan pada direktori **root package kalian** → **new** → **package** dan beri nama **adapter**.
+
+Selanjutnya, buat sebuah **class** baru dengan cara klik kanan pada package **adapter** → **new** → **Kotlin file/class** dan beri nama **ListAlbumAdapter**, dan pilih bagian **Class**.
+
+Setelah class **ListAlbumAdapter** dibuat, lengkapi kode nya menjadi seperti sebagai berikut:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+}
+```
+
+Jika bagian `RecyclerView` masih berwarna merah, maka jangan lupa untuk mengimport class `RecyclerView` dengan cara menekan tombol **Alt + Enter** pada keyboard dan pilih **Import class**.
+
+Kemudian akan terdapat warna merah pada kode, yaitu pada `ViewHolder`. Kita resolve satu per satu. Pertama adalah kita tekan **alt+enter / klik tombol merah** pada `ViewHolder` dan pilih **Create class ViewHolder**, kemudian pilih **ListAlbumAdapter**  karena kita akan membuat sebuah inner class:
+
+![Create ViewHolder](images/create-viewholder.png)
+
+Kemudian pilih **ListAlbumAdapter** untuk membuat class ViewHolder di dalam class ListAlbumAdapter.
+
+![Create ViewHolder](images/create-viewholder-2.png)
+
+Sehingga kode yang kita buat menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    class ViewHolder() {
+
+    }
+}
+```
+
+Masih ada merah-nya. Seharusnya class ViewHolder inherit ke class RecyclerView.ViewHolder. Maka ubah kode nya seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    class ViewHolder() : RecyclerView.ViewHolder {
+
+    }
+}
+```
+
+Sekarang kembali masih ada merah pada `RecyclerView.ViewHolder`. Kita tekan **alt+enter / klik tombol merah** pada `RecyclerView.ViewHolder` dan pilih **Add constructor parameters from ViewHolder(View)**.
+
+![Add Constructor](images/add-constructor-viewholder.png)
+
+Maka kode yang kita buat menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+    }
+}
+```
+
+Masih terdapat merah pada bagian **class ListAlbumAdapter**. Kita tekan **alt+enter / klik tombol merah** pada **class ListAlbumAdapter** dan pilih **Implement members**.
+
+![Implement Members](images/implement-members-adapter.png)
+
+Kemudian pilih ketiga opsi yang ada, yaitu `onCreateViewHolder`, `onBindViewHolder`, dan `getItemCount`, lalu klik **Ok**.
+
+![Implement Members](images/implement-members-adapter-2.png)
+
+Maka kode yang kita buat menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        TODO("Not yet implemented")
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getItemCount(): Int {
+        TODO("Not yet implemented")
+    }
+}
+```
+
+Setelah itu kita buat properties `listAlbum` dengan tipe data `ArayList<Album>` sebagai data yang akan ditampilkan di RecyclerView. Lalu buat pula method/function untuk mengisi data ke dalam `listAlbum` tersebut dengan nama `setData`. Tambahkan kode berikut pada class **ListAlbumAdapter**:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    private val listAlbum = ArrayList<Album>()
+
+    fun setData(items: ArrayList<Album>) {
+        listAlbum.clear()
+        listAlbum.addAll(items)
+        notifyDataSetChanged()
+    }
+}
+```
+
+Sekarang kita akan fokus terlebih dahulu kepada class **ViewHolder**. Maka lengkapi class **ViewHolder** menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val ivAlbumPicture: ImageView = itemView.findViewById(R.id.iv_album_picture)
+        private val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
+        private val tvArtist: TextView = itemView.findViewById(R.id.tv_artist)
+        private val tvYear: TextView = itemView.findViewById(R.id.tv_year)
+
+        fun bind(data: Album) {
+            data.apply {
+                Glide.with(itemView.context)
+                    .load(cover)
+                    .into(ivAlbumPicture)
+                tvTitle.text = albumNames
+                tvArtist.text = albumArtist
+                tvYear.text = year
+            }
+        }
+    }
+}
+```
+
+Di dalam class ViewHolder kita akan menginisialisasi view yang ada di layout item_album.xml. Kemudian kita akan mengisi data ke dalam view tersebut dengan menggunakan method/function `bind`. Dan untuk memasukkan gambar ke dalam ImageView kita menggunakan library Glide.
+
+Selanjutnya kita akan fokus ke method/function `onCreateViewHolder`. Lengkapi kode pada method/function `onCreateViewHolder` menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_item, parent, false)
+        return ViewHolder(view)
+    }
+
+}
+```
+
+Method `onCreateViewHolder` akan membuat view baru yang akan digunakan oleh RecyclerView untuk menampilkan data. Kita menggunakan method `inflate` untuk membuat view baru. Dan kita akan mengembalikan object ViewHolder yang telah kita buat tadi.
+
+Selanjutnya kita akan fokus ke method/function `onBindViewHolder`. Lengkapi kode pada method/function `onBindViewHolder` menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val data = listAlbum[position]
+        holder.bind(data)
+    }
+
+}
+```
+
+Method `onBindViewHolder` akan menghubungkan data dengan view yang akan ditampilkan di RecyclerView. Kita akan menghubungkan data dengan view yang ada di class ViewHolder dengan memanggil method/function `bind` yang sudah kita buat tadi.
+
+Selanjutnya kita akan fokus ke method/function `getItemCount`. Lengkapi kode pada method/function `getItemCount` menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    override fun getItemCount(): Int = listAlbum.size
+
+}
+```
+
+Method `getItemCount` akan mengembalikan jumlah data yang akan ditampilkan di RecyclerView.
+
+Maka secara keseluruhan, class **ListAlbumAdapter** akan menjadi seperti ini:
+
+```ListAlbumAdapter.kt
+class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
+
+    private val listAlbum = ArrayList<Album>()
+
+    fun setData(items: ArrayList<Album>) {
+        listAlbum.clear()
+        listAlbum.addAll(items)
+        notifyDataSetChanged()
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val ivAlbumPicture: ImageView = itemView.findViewById(R.id.iv_album_picture)
+        private val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
+        private val tvArtist: TextView = itemView.findViewById(R.id.tv_artist)
+        private val tvYear: TextView = itemView.findViewById(R.id.tv_year)
+
+        fun bind(data: Album) {
+            data.apply {
+                Glide.with(itemView.context)
+                    .load(cover)
+                    .into(ivAlbumPicture)
+                tvTitle.text = albumNames
+                tvArtist.text = albumArtist
+                tvYear.text = year
+            }
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_item, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val data = listAlbum[position]
+        holder.bind(data)
+    }
+
+    override fun getItemCount(): Int = listAlbum.size
+
+}
+```
+
+## Menghubungkan RecyclerView dengan Adapter pada MainActivity
