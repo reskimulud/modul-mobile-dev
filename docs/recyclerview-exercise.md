@@ -1,7 +1,5 @@
 # Latihan RecyclerView
 
-[GitHub Project RecyclerView](https://github.com/mankart/recyclerview)
-
 ## Tujuan Latihan RecyclerView
 
 Pada latihan ini memiliki tujuan yaitu untuk memahami cara penggunaan RecyclerView pada Android. Pada latihan ini kita akan membuat aplikasi yang menampilkan daftar album musik. Adapun poin-poin tujuannya adalah sebagai berikut:
@@ -427,3 +425,66 @@ class ListAlbumAdapter: RecyclerView<ListAlbumAdapter.ViewHolder>() {
 ```
 
 ## Menghubungkan RecyclerView dengan Adapter pada MainActivity
+
+Setelah membuat adapter, selanjutnya kita akan menghubungkan RecyclerView dengan adapter yang sudah kita buat tadi. Kita akan menghubungkannya pada class **MainActivity**. Tambahkan kode berikut pada class **MainActivity** untuk membuat properties `rvAlbums` dan `listAlbumAdapter`:
+
+```MainActivity.kt
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var rvAlbums: RecyclerView
+    private lateinit var listAlbumAdapter: ListAlbumAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        rvAlbums = findViewById(R.id.rv_albums)
+        listAlbumAdapter = ListAlbumAdapter()
+    }
+}
+```
+
+Kedua properties tersebut menggunakan keyword `lateinit` karena kita akan menginisialisasikan properties tersebut pada method `onCreate`. Selanjutnya kita akan menghubungkan RecyclerView dengan adapter yang sudah kita buat tadi. Buat function baru dengan nama `showRecyclerList` dan tambahkan kode berikut pada function tersebut:
+
+```MainActivity.kt
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var rvAlbums: RecyclerView
+    private lateinit var listAlbumAdapter: ListAlbumAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        rvAlbums = findViewById(R.id.rv_albums)
+        listAlbumAdapter = ListAlbumAdapter()
+
+        showRecyclerList()
+    }
+
+    private fun showRecyclerList() {
+        rvAlbums.layoutManager = LinearLayoutManager(this)
+        rvAlbums.adapter = listAlbumAdapter
+
+        listAlbumAdapter.setData(listData)
+    }
+}
+```
+
+Pada function `showRecyclerList` kita akan mengatur layout manager dan adapter untuk RecyclerView. Kemudian kita akan memanggil method/function `setData` untuk mengisi data ke dalam RecyclerView. Dan data yang akan kita masukkan ke dalam RecyclerView adalah data yang ada di variable `listData` dari object **AlbumData**. Jika variable `listData` error, maka jangan lupa untuk mengimport variable tersebut dengan cara menekan tombol `Alt + Enter` pada variable `listData` tersebut.
+
+## Jalankan Aplikasi
+
+Setelah itu jalankan aplikasi untuk memastikan apakah RecyclerView sudah berjalan dengan baik, kita akan menjalankan aplikasi. Jika aplikasi sudah berjalan dengan baik, maka hasilnya akan seperti ini:
+
+![RecyclerView](images/recyclerview-exercise.png)
+
+---
+
+Selamat, kita telah berhasil membuat RecyclerView pada Android Studio. Sekarang kita sudah bisa membuat RecyclerView dengan mudah.
+
+Kode tersebut juga telah disimpan di repository GitHub. Jika ingin melihat kode lengkapnya, silahkan kunjungi repository GitHub berikut: [GitHub Project MyRecyclerView](https://github.com/mankart/recyclerview)
+
+---
+
+**[<< Sebelumnya](recyclerview.md)**  | Selanjutnya >>
