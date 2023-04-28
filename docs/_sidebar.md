@@ -33,6 +33,8 @@
 
 - #4 - Functional Programming
 
+  - [Konsep Functional Programming](m19-functional-programming.md)
+
 - #6 - Konsep Dasar Android
 
 - #7 - Fragment
