@@ -483,7 +483,7 @@ Setelah itu jalankan aplikasi untuk memastikan apakah RecyclerView sudah berjala
 
 Selamat, kita telah berhasil membuat RecyclerView pada Android Studio. Sekarang kita sudah bisa membuat RecyclerView dengan mudah.
 
-Kode tersebut juga telah disimpan di repository GitHub. Jika ingin melihat kode lengkapnya, silahkan kunjungi repository GitHub berikut: [GitHub Project MyRecyclerView](https://github.com/mankart/recyclerview)
+Kode tersebut juga telah disimpan di repository GitHub. Jika ingin melihat kode lengkapnya, silahkan kunjungi repository GitHub berikut: [GitHub Project MyRecyclerView](https://github.com/mankart/recyclerview/tree/recyclerview)
 
 ---
 
