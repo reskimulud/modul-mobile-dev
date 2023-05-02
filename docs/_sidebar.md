@@ -48,6 +48,7 @@
 
   - [Pengenalan Android Architecture Component](aac.md)
   - [ViewModel dan LiveData](viewmodel-livedata.md)
+  - [Latihan ViewModel dan LiveData](viewmodel-livedata-exercise.md)
 
 - #10 - Android Navigation
 
