@@ -46,6 +46,9 @@
 
 - #9 - Architecture Component
 
+  - [Pengenalan Android Architecture Component](aac.md)
+  - [ViewModel dan LiveData](viewmodel-livedata.md)
+
 - #10 - Android Navigation
 
 - #11 - Networking
